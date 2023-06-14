@@ -2,15 +2,14 @@ package com.example.greetings;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-class MainController {
-    @RequestMapping("/")
-    public String root(ModelMap modelMap){
-        modelMap.addAttribute("name", "My name is Arnab Mitra");
+public class MainController {
+    
+    @GetMapping("/")
+    public String root(Model model){
+        model.addAttribute("name", "Hello! My name is Arnab Mitra");
         return "mainTemplate";
     }
 }
